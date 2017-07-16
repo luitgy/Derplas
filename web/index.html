@@ -8,15 +8,15 @@
     </head>
     <body>
 
-    <ng-include src="'pages/includes/cabecera.html'"></ng-include>
+    <ng-include src="'cabecera.html'"></ng-include>
 
-    <ul>
-        <li><a href="#login">Ir login</a></li>
-    </ul>
+    <a href="#!budgets">Presupuestos</a>
+    <a href="#!billings">Facturació</a>
+    <a href="#!orders">Comandes</a>
 
-    <div ng-view></div>
+    <div id="mainView" ng-view></div>
 
-    <ng-include src="'pages/includes/pie.html'"></ng-include>
+    <ng-include src="'pie.html'"></ng-include>
 
 </body>
 
