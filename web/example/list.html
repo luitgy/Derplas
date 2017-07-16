@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Derplas</title>
+        <meta charset="UTF-8">
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body ng-controller="SeguroController">
+    <ng-include src="'cabecera.html'" ></ng-include>
+    <form>
+
+        <table>
+            <tr ng-repeat="seguro in seguros" ng-style="{color:($odd?'red':'green')}>
+        <td><a ng-href="./seguros/edit/{{seguro.nif}}">{{seguro.nif}}</a></td>
+        <td>{{seguro.nombre}}</td>
+        <td>{{seguro.ape1}}</td>
+                <td ng-switch on="seguro.sexo">
+                    <span ng-switch-when="H">Hombre</span>
+                    <span ng-switch-when="M">Mujer</span>
+                    <span ng-switch-when=""></span>
+                    <span ng-switch-default>Desconocido</span>
+                </td>
+            </tr>
+        </table>
+
+        <tfoot>
+            <tr>
+                <td colspan="3">El Nº de seguros medicos es:</td>
+                <td ng-bind="seguros.length"></td>
+            </tr>
+        </tfoot>
+
+    </form>
+    <ng-include src="'pie.html'" ></ng-include>
+</body>
+</html>
