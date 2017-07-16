@@ -2,11 +2,22 @@
 <html ng-app="app">
     <head>
         <script src="js/lib/angular/angular.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/lib/angular/angular-route.min.js"></script>
+        <script src="js/common/controllers/controllers.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
     </head>
-    <body ng-controller="PruebaController">
-        {{mensaje}}
-        <br>
-        {{progreso}}
-    </body>
+    <body>
+
+    <ng-include src="'pages/includes/cabecera.html'"></ng-include>
+
+    <ul>
+        <li><a href="#login">Ir login</a></li>
+    </ul>
+
+    <div ng-view></div>
+
+    <ng-include src="'pages/includes/pie.html'"></ng-include>
+
+</body>
+
 </html>
